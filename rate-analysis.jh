@@ -1,0 +1,118 @@
+entity WorkEstimateAdditionalCharges {
+	workEstimateItemId Long required,
+	additionalChargesDesc String required,
+	additionalChargesRate BigDecimal required
+}
+
+entity WorkEstimateOtherAddnLiftCharges {
+	workEstimateRateAnalysisId Long required,
+	notesMasterId Long required,
+	selected Boolean required,
+	addnCharges BigDecimal required
+}
+
+entity WorkEstimateLiftCharges {
+	workEstimateItemId Long required,
+	materialMasterId Long required,
+	liftDistance BigDecimal required min(0) max(100000000),
+	liftcharges BigDecimal required
+}
+
+entity WorkEstimateRoyalty {
+	workEstimateId Long required,
+	catWorkSorItemId Long required,
+	materialMasterId Long required,
+	subEstimateId Long required,
+	royaltyRateMasterId Long required,
+	srRoyaltyCharges BigDecimal required,
+	prevailingRoyaltyCharges BigDecimal required min(0) max(100000000),
+	densityFactor BigDecimal required,
+	difference BigDecimal
+}
+
+entity WorkEstimateLoadUnloadCharges {
+	workEstimateId Long required,
+	catWorkSorItemId Long required,
+	materialMasterId Long required,
+	loadUnloadRateMasterId Long required,
+	subEstimateId Long required,
+	selectedLoadCharges Boolean required,
+	loadingCharges BigDecimal required,
+	selectedUnloadCharges Boolean required,
+	unloadingCharges BigDecimal required
+}
+
+entity WorkEstimateLead {
+	workEstimateId Long required,
+	catWorkSorItemId Long required,
+	materialMasterId Long required,
+	nhwyRoadTypeMasterId Long,
+	subEstimateId Long required,
+	quarry String maxlength(50),
+	leadInM BigDecimal min(0) max(10000),
+	leadInKm BigDecimal min(0) max(10000),
+	leadChargesM BigDecimal,
+	leadChargesKm BigDecimal,
+	initialLeadRequiredYn Boolean required
+}
+
+entity WorkEstimateMarketRate {
+	workEstimateId Long required,
+	subEstimateId Long required,
+	materialMasterId Long required,
+	difference BigDecimal required,
+	prevailingMarketRate BigDecimal required min(0) max(100000000),
+}
+
+entity WorkEstimateRateAnalysis {
+	workEstimateId Long required,
+	areaWeightageMasterId Long,
+	areaWeightageCircleId Long,
+	areaWeightagePercentage BigDecimal,
+	sorFinancialYear String,
+	basicRate BigDecimal required,
+	netRate BigDecimal required,
+	floorNo Long,
+	contractorProfitPercentage BigDecimal min(0) max(100),
+	overheadPercentage BigDecimal min(0) max(100),
+	taxPercentage BigDecimal min(0) max(100),
+	liftCharges BigDecimal,
+	localityAllowance BigDecimal min(0) max(100),
+	employeesCost BigDecimal,
+	contingencies BigDecimal min(0) max(100),
+	transportationCost BigDecimal min(0) max(100),
+	serviceTax BigDecimal min(0) max(100),
+	providentFundCharges BigDecimal min(0) max(100),
+	esiCharges BigDecimal min(0) max(100),
+	idcCharges BigDecimal min(0) max(100),
+	watchAndWardCost BigDecimal min(0) max(100),
+	insuranceCost BigDecimal min(0) max(100),
+	statutoryCharges BigDecimal,
+	compensationCost BigDecimal,
+	raCompletedYn Boolean required
+}
+
+entity RaParameters {
+	paramName String maxlength(50),
+	paramTable String maxlength(50),
+	paramField String maxlength(50)
+}
+
+entity RaConfiguration {
+	deptId Long required,
+	raParamId Long required
+}
+
+entity RaFormula {
+	deptId Long required,
+	workTypeId Long,
+	formula String,
+	awFormula String,
+	royaltyFormula String
+}
+
+paginate WorkEstimateAdditionalCharges, WorkEstimateOtherAddnLiftCharges, WorkEstimateLiftCharges, WorkEstimateRoyalty, WorkEstimateLoadUnloadCharges, WorkEstimateLead, WorkEstimateMarketRate, WorkEstimateRateAnalysis with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl
