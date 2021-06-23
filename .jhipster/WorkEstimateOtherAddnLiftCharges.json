@@ -1,0 +1,39 @@
+{
+  "name": "WorkEstimateOtherAddnLiftCharges",
+  "fields": [
+    {
+      "fieldName": "workEstimateRateAnalysisId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "notesMasterId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "selected",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "addnCharges",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "work_estimate_other_addn_lift_charges",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "rateAnalysis",
+  "clientRootFolder": "rateAnalysis",
+  "databaseType": "sql",
+  "changelogDate": "20210623060748"
+}

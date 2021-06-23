@@ -15,6 +15,17 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060747_added_entity_WorkEstimateAdditionalCharges.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060748_added_entity_WorkEstimateOtherAddnLiftCharges.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060749_added_entity_WorkEstimateLiftCharges.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060750_added_entity_WorkEstimateRoyalty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060751_added_entity_WorkEstimateLoadUnloadCharges.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060752_added_entity_WorkEstimateLead.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060753_added_entity_WorkEstimateMarketRate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060754_added_entity_WorkEstimateRateAnalysis.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060755_added_entity_RaParameters.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060756_added_entity_RaConfiguration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210623060757_added_entity_RaFormula.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->

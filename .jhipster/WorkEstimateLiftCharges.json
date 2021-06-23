@@ -1,0 +1,41 @@
+{
+  "name": "WorkEstimateLiftCharges",
+  "fields": [
+    {
+      "fieldName": "workEstimateItemId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "materialMasterId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "liftDistance",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "100000000"
+    },
+    {
+      "fieldName": "liftcharges",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "work_estimate_lift_charges",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "rateAnalysis",
+  "clientRootFolder": "rateAnalysis",
+  "databaseType": "sql",
+  "changelogDate": "20210623060749"
+}
