@@ -40,7 +40,21 @@
     "pages": [],
     "creationTimestamp": 1624428146682,
     "jwtSecretKey": "ZjdlY2EwN2JmODgwNmY1Y2ZhNzlkMGFlY2U0NmQ0MWY4Mzk3Y2RiZTk3YzIzMTJlN2MwY2QyNzJmMzVlMThjNzc4Y2ViMTM0MGY3NTkzOGMxMDQzZWU5MTZiZGRhZjVlYjhjZGQ2OTNhMjQzM2YzOTlhZjlhNDhjZDEwMjYyMDA=",
-    "reactive": false
+    "reactive": false,
+    "entities": [
+      "WorkEstimateAdditionalCharges",
+      "WorkEstimateOtherAddnLiftCharges",
+      "WorkEstimateLiftCharges",
+      "WorkEstimateRoyaltyCharges",
+      "WorkEstimateLoadUnloadCharges",
+      "WorkEstimateLeadCharges",
+      "WorkEstimateMarketRate",
+      "WorkEstimateRateAnalysis",
+      "RaParameters",
+      "RaConfiguration",
+      "RaFormula"
+    ],
+    "lastLiquibaseTimestamp": 1624539541000
   },
   "git-provider": "GitHub",
   "git-company": "USM-UDIPTO",
