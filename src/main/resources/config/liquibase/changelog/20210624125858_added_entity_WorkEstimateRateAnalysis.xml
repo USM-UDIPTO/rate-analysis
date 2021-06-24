@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity WorkEstimateRateAnalysis.
+    -->
+    <changeSet id="20210624125858-1" author="jhipster">
+        <createTable tableName="work_estimate_rate_analysis">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="work_estimate_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="area_weightage_master_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="area_weightage_circle_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="area_weightage_percentage" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sor_financial_year" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="basic_rate" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="net_rate" type="decimal(21,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="floor_no" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="contractor_profit_percentage" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="overhead_percentage" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tax_percentage" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lift_charges" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="locality_allowance" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="employees_cost" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="contingencies" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="transportation_cost" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="service_tax" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="provident_fund_charges" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="esi_charges" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="idc_charges" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="watch_and_ward_cost" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="insurance_cost" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="statutory_charges" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="compensation_cost" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ra_completed_yn" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20210624125858-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/work_estimate_rate_analysis.csv"
+                  separator=";"
+                  tableName="work_estimate_rate_analysis">
+            <column name="id" type="numeric"/>
+            <column name="work_estimate_id" type="numeric"/>
+            <column name="area_weightage_master_id" type="numeric"/>
+            <column name="area_weightage_circle_id" type="numeric"/>
+            <column name="area_weightage_percentage" type="numeric"/>
+            <column name="sor_financial_year" type="string"/>
+            <column name="basic_rate" type="numeric"/>
+            <column name="net_rate" type="numeric"/>
+            <column name="floor_no" type="numeric"/>
+            <column name="contractor_profit_percentage" type="numeric"/>
+            <column name="overhead_percentage" type="numeric"/>
+            <column name="tax_percentage" type="numeric"/>
+            <column name="lift_charges" type="numeric"/>
+            <column name="locality_allowance" type="numeric"/>
+            <column name="employees_cost" type="numeric"/>
+            <column name="contingencies" type="numeric"/>
+            <column name="transportation_cost" type="numeric"/>
+            <column name="service_tax" type="numeric"/>
+            <column name="provident_fund_charges" type="numeric"/>
+            <column name="esi_charges" type="numeric"/>
+            <column name="idc_charges" type="numeric"/>
+            <column name="watch_and_ward_cost" type="numeric"/>
+            <column name="insurance_cost" type="numeric"/>
+            <column name="statutory_charges" type="numeric"/>
+            <column name="compensation_cost" type="numeric"/>
+            <column name="ra_completed_yn" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

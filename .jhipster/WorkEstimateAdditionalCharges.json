@@ -1,0 +1,34 @@
+{
+  "name": "WorkEstimateAdditionalCharges",
+  "fields": [
+    {
+      "fieldName": "workEstimateItemId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "additionalChargesDesc",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "additionalChargesRate",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "work_estimate_additional_charges",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "rateAnalysis",
+  "clientRootFolder": "rateAnalysis",
+  "databaseType": "sql",
+  "changelogDate": "20210624125851"
+}
